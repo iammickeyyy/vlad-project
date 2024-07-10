@@ -1,0 +1,77 @@
+﻿# Создано https://www.toptal.com/developers/gitignore/api/unity
+# Редактировать в https://www.toptal.com/developers/gitignore?templates=unity
+
+### Unity ###
+# Этот файл .gitignore следует поместить в корневой каталог вашего проекта Unity
+#
+# Получить последнюю версию из https://github.com/github/gitignore/blob/main/Unity.gitignore
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb] uild/
+/[Bb] uilds/
+/[Ll]ogs/
+/[Uu]ser [Ss] ettings/
+
+# Снимки памяти могут стать чрезмерно большими.
+# Они также могут содержать чрезвычайно конфиденциальные данные
+/[Mm]emoryCaptures/
+
+# Записи могут стать чрезмерно большими
+/[Rr] ecordings/
+
+# Раскомментируйте эту строку, если хотите игнорировать плагин asset store tools
+# /[Aa]ssets/AssetStoreTools*
+
+# Автоматически созданный плагин Jetbrains Rider
+/[Aa] ssets/Плагины /Редактор /JetBrains*
+
+# Каталог кэша Visual Studio 
+.vs/
+
+# Каталог кэша Gradle 
+.gradle/
+
+# Автоматически сгенерированное решение VS / MD / Consulo и файлы проекта
+Экспортированный файл OBJ/
+.consulo/
+*.csproj 
+*.unityproj 
+*.sln 
+*.suo 
+*.tmp 
+*.user 
+*.пользовательские настройки 
+*.pidb 
+*.booproj 
+*.svd 
+*.pdb
+*.mdb
+*.opendb 
+*.VC.db
+
+ мета-файлы, созданные # Unity3D 
+*.pidb.meta 
+*.pdb.meta 
+*.mdb.meta
+
+# Unity3D сгенерировал файл в отчетах о сбоях 
+sysinfo.txt
+
+# Сборки 
+* .apk 
+* .aab
+* .unitypackage 
+* .app
+
+# Сгенерированный Crashlytics файл 
+crashlytics-сборка.свойства
+
+# Упакованные адресуемые файлы
+/[Aa] ssets /[Aa] удаляемые[Aa] ssets [Dd] ata /*/*.bin*
+
+# Временные автоматически создаваемые ресурсы Android
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Конец https://www.toptal.com/developers/gitignore/api/unity
