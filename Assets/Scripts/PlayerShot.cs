@@ -6,26 +6,49 @@ using UnityEngine;
 
 public class PlayerShot : MonoBehaviour
 {
-    [SerializeField] private float shotInterval;
+    // [SerializeField] private float shotInterval;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float shotSpeed;
-    private float shotTimer;
+    [SerializeField] private PlayerConfig _config;
+    [SerializeField] private int _playerLevel;
+    [SerializeField] private List<GameObject> _shootPoints;
+
+    private void Start()
+    {
+        StartCoroutine(ShootCoroutine());
+    }
 
     private void Update()
     {
-        Shot();
+         switch(_playerLevel)
+        {
+            case 1:
+                Shoot(_shootPoints[0]);
+                break;
+            case 2:
+                for(int i = 1; i < 3; i++)
+                {
+                    Shoot(_shootPoints[i]);
+                }
+                break;
+            case 3:
+                default:
+                break;
+        }
     }
 
-    private void Shot()
+    public void Shoot(GameObject point)
     {
-        shotTimer += Time.deltaTime;
-        if (shotTimer >= shotInterval)
+        GameObject bullet = Instantiate(bulletPrefab, point.transform.position, quaternion.identity);
+        Rigidbody2D bulletRigidbody2D = bullet.GetComponent<Rigidbody2D>();
+        Vector3 direction = Vector3.up;
+        bulletRigidbody2D.AddForce(direction * shotSpeed, ForceMode2D.Impulse);
+    }
+    private IEnumerator ShootCoroutine()
+    {
+        while (true)
         {
-            shotTimer = 0;
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, quaternion.identity);
-            Rigidbody2D bulletRigidbody2D = bullet.GetComponent<Rigidbody2D>();
-            Vector3 direction = Vector3.up;
-            bulletRigidbody2D.AddForce(direction * shotSpeed, ForceMode2D.Impulse);
+            yield return new WaitForSeconds(_config.PlayerShootDelay);
         }
     }
 }

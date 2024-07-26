@@ -204,6 +204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  _leftWall: {fileID: 2109211644}
+  _rightWall: {fileID: 778624112}
 --- !u!70 &167848429
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
