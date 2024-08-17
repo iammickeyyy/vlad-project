@@ -4,5 +4,5 @@
 public class PlayerConfig : ScriptableObject
 {
     public float PlayerShootDelay;
-    public float MoveSpeed;
+    public float MoveSpeed = 5;
 }

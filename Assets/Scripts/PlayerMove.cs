@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
     [SerializeField] private Transform _leftWall;
     [SerializeField] private Transform _rightWall;
+    [SerializeField] private PlayerConfig _config;
 
     private void Update()
     {
@@ -17,7 +17,7 @@ public class PlayerMove : MonoBehaviour
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
         Vector3 step = new Vector3(hor, ver, 0);
-        Vector3 nextPosition = transform.position + step * (moveSpeed * Time.deltaTime);
+        Vector3 nextPosition = transform.position + step * (_config.MoveSpeed * Time.deltaTime);
 
         float clampedX = Mathf.Clamp(nextPosition.x, _leftWall.position.x, _rightWall.position.x);
         nextPosition.x = clampedX;
